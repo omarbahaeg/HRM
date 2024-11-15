@@ -1,0 +1,208 @@
+/* Variables
+-------------------------------------------------- */
+.root {
+  --primary-color: #006e28;
+  --border-color: #e5e7eb;
+  --hover-color: #f8fafc;
+  --gray-light: var(--mantine-color-gray-1);
+  --gray-medium: var(--mantine-color-gray-3);
+  --gray-dark: var(--mantine-color-gray-6);
+  --section-gap: 8px;
+  --border-radius: 6px;
+}
+
+/* Reset & Common Styles
+-------------------------------------------------- */
+.appContainer {
+  composes: root;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.tableContainer {
+  composes: root;
+  width: 100%;
+}
+
+/* Table Layout
+-------------------------------------------------- */
+.tableRow {
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.tableRow:hover {
+  background-color: var(--hover-color) !important;
+}
+
+.tableRowSelected {
+  background-color: var(--hover-color) !important;
+}
+
+/* Cell Styles
+-------------------------------------------------- */
+.cell {
+  composes: root;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cellHeader {
+  composes: root;
+  padding: 18px 16px !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cellData {
+  composes: root;
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* Toolbar Styles
+-------------------------------------------------- */
+.toolbar {
+  composes: root;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: var(--border-radius);
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
+.searchInput {
+  composes: root;
+  background-color: transparent;
+  border: 1px solid var(--gray-medium);
+  transition: border-color 0.2s ease;
+  width: 260px;
+}
+
+.searchInput:hover {
+  border-color: var(--gray-dark);
+}
+
+.searchInput:focus {
+  border-color: var(--primary-color);
+}
+
+/* Pagination Styles
+-------------------------------------------------- */
+.paginationControl {
+  height: 30px !important;
+  width: 30px !important;
+}
+
+.paginationControlActive {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.paginationSelect {
+  composes: root;
+  background-color: white !important;
+  border: 1px solid var(--gray-medium) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.paginationSelectHover {
+  border-color: var(--gray-dark) !important;
+}
+
+.paginationSelectFocus {
+  border-color: var(--primary-color) !important;
+  outline: none !important;
+}
+
+/* Layout Sections
+-------------------------------------------------- */
+.section {
+  composes: root;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.sectionBetween {
+  composes: section;
+  justify-content: space-between;
+}
+
+.sectionGroup {
+  composes: section;
+  gap: var(--section-gap);
+}
+
+/* Drag & Drop
+-------------------------------------------------- */
+.dragHandle {
+  composes: root;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  color: var(--gray-dark);
+  transition: color 0.2s ease;
+}
+
+.dragHandleActive {
+  cursor: grabbing;
+}
+
+.draggingRow {
+  background-color: var(--gray-light);
+  opacity: 0.9;
+}
+
+.dropZone {
+  border-top: 2px dashed var(--gray-medium);
+}
+
+/* Filter Styles
+-------------------------------------------------- */
+.filterMode {
+  background-color: var(--gray-light);
+}
+
+.filterPopover {
+  min-width: 200px;
+  padding: 8px;
+}
+
+/* Progress Styles
+-------------------------------------------------- */
+.progress {
+  composes: root;
+  width: 100% !important;
+  padding: 8px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Container Styles
+-------------------------------------------------- */
+.container {
+  composes: root;
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.containerStart {
+  composes: container;
+  justify-content: flex-start;
+}
+
+.containerEnd {
+  composes: container;
+  justify-content: flex-end;
+}
+  
