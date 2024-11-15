@@ -15,6 +15,11 @@ export const PLASMIC = initPlasmicLoader({
 PLASMIC.registerComponent(VSHTable, {
   name: "VSHTable",
   props: {
+    
+
+PLASMIC.registerComponent(VSHTable, {
+  name: "VSHTable",
+  props: {
     data: {
       type: "dataSourceOpData",
       displayName: "Data",
@@ -398,32 +403,32 @@ PLASMIC.registerComponent(VSHTable, {
       type: "object",
       displayName: "Table Layout",
       fields: {
-        header: {
+        header: { // هذا مسؤل عن اظهار او اخفاء الجزء العلوي من الجدول بالكامل الذي يحتوي علي ايقونات التحكم وعلي ازرار الاستخراج
           type: "boolean",
           displayName: "Header",
           defaultValue: true
         },
-        headerLeftSection: {
+        headerLeftSection: { // هذا مسؤل عن اخفاء الحزء الايسر من راس الجدول الذي يحتوي علي ازرار الاستخراج
           type: "boolean",
           displayName: "Header Left Section",
           defaultValue: true
         },
-        headerRightSection: {
+        headerRightSection: { // هذا مسؤل عن اخفاء/اظهار الحزء الايمن من راس الجدول الذي يحتوي علي ايقونات التحكم
           type: "boolean",
           displayName: "Header Right Section",
           defaultValue: true
         },
-        footer: {
+        footer: { // هذا مسؤل عن اخفاء/اظهار الجزء السفلي من الجدول بالكامل الذي يحتوي علي pagination و rows info
           type: "boolean",
           displayName: "Footer",
           defaultValue: true
         },
-        footerLeftSection: {
+        footerLeftSection: { // هذا مسؤل عن اخفاء/اظهار الحزء الايسر من الجزء السفلي من الجدول الذي يحتوي علي rows info
           type: "boolean",
           displayName: "Footer Left Section",
           defaultValue: true
         },
-        footerRightSection: {
+        footerRightSection: { // هذا مسؤل عن اخفاء/اظهار الحزء الايمن من الجزء السفلي من الجدول الذي يحتوي علي pagination
           type: "boolean",
           displayName: "Footer Right Section",
           defaultValue: true
@@ -432,23 +437,23 @@ PLASMIC.registerComponent(VSHTable, {
           type: "object",
           displayName: "Export Data Config",
           fields: {
-            gap: {
+            gap: { // هذا مسؤل عن المسافة بين ازرار الاستخراج
               type: "number",
               displayName: "Gap",
               defaultValue: 8,
               description: "Space between export buttons"
             },
-            exportAllData: {
+            exportAllData: { // هذا مسؤل عن اخفاء/اظهار ازرار الاستخراج للكل البيانات
               type: "boolean",
               displayName: "Export All Data",
               defaultValue: true
             },
-            selectedRows: {
+            selectedRows: { // هذا مسؤل عن اخفاء/اظهار ازرار الاستخراج للبيانات المختارة
               type: "boolean",
               displayName: "Selected Rows",
               defaultValue: true
             },
-            exportTypes: {
+            exportTypes: { // هذا مسؤل عن التحكم في انواع الاستخراجات التي تكون موجودة داخل menu الخاص بازرار الاستخراج
               type: "choice",
               displayName: "Export Types",
               choice: "multi",
@@ -460,7 +465,7 @@ PLASMIC.registerComponent(VSHTable, {
                 { label: "JPG", value: "jpg" },
                 { label: "PNG", value: "png" }
               ],
-              defaultValue: ["pdf", "excel", "csv", "json"],
+              defaultValue: ["pdf", "excel", "csv", "json"],  // هذا القيمة الافتراضية هي الانواع التي سيتم استخراجها اول ما يتم تحميل الجدول
               multiSelect: true
             }
           }
@@ -469,62 +474,62 @@ PLASMIC.registerComponent(VSHTable, {
           type: "object",
           displayName: "Topbar Config",
           fields: {
-            gap: {
+            gap: { // هذا مسؤل عن المسافة بين ايقونات التحكم
               type: "number",
               displayName: "Gap",
               defaultValue: 8
             },
-            searchPlaceholder: {
+            searchPlaceholder: { // هذا مسؤل عن الرمز الذي سيظهر داخل المربع الخاص بالبحث
               type: "string",
               displayName: "Search Placeholder",
               defaultValue: "Search..."
             },
-            searchToggle: {
+            searchToggle: { // هذا مسؤل عن تشغيل/اطفاء المربع زر ايقونة البحث يجب ان يعمل بنفس الطريقة عند الضغط علي الزر بالماوس مثلا
               type: "boolean",
               displayName: "Search Toggle",
               defaultValue: true
             },
-            filterToggle: {
+            filterToggle: { // هذا مسؤل عن تشغيل/اطفاء المربع زر ايقونة التصفية يجب ان يعمل بنفس الطريقة عند الضغط علي الزر بالماوس مثلا
               type: "boolean",
               displayName: "Filter Toggle",
               defaultValue: true
             },
-            columnVisibility: {
+            columnVisibility: { // هذا مسؤل عن اظهار/اخفاء ايقونة 
               type: "boolean",
               displayName: "Column Visibility",
               defaultValue: true
             },
-            densityToggle: {
+            densityToggle: { // هذا مسؤل عن اظهار/اخفاء ايقونة تحكم الكثافة
               type: "boolean",
               displayName: "Density Toggle",
               defaultValue: true
             },
-            fullScreenToggle: {
+            fullScreenToggle: { // هذا مسؤل عن اظهار/اخفاء ايقونة تحكم الشاشة الكاملة
               type: "boolean",
               displayName: "Full Screen Toggle",
               defaultValue: true
             },
-            searchToggleVisibility: {
+            searchToggleVisibility: { // هذا مسؤل عن اظهار/اخفاء ايقونة تحكم البحث
               type: "boolean",
               displayName: "Search Toggle Visibility",
               defaultValue: true
             },
-            filterToggleVisibility: {
+            filterToggleVisibility: { // هذا مسؤل عن اظهار/اخفاء ايقونة تحكم التصفية
               type: "boolean",
               displayName: "Filter Toggle Visibility",
               defaultValue: true
             },
-            filterType: {
+            filterType: { // هذا مسؤل عن اختيار نوع التصفية التي ستظهر في الجدول
               type: "choice",
               displayName: "Filter Type",
-              options: ["Default", "Popover"],
-              defaultValue: "Default"
+              options: ["Default", "Popover"], // Default = (Filter Variants) - Popover = (Popover Filters)
+              defaultValue: "Default" // هذا القيمة الافتراضية هي التصفية الافتراضية التي ستظهر في الجدول
             },
-            densityType: {
+            densityType: { // هذا مسؤل عن اختيار نوع الكثافة التي ستظهر في الجدول
               type: "choice",
               displayName: "Density Type",
-              options: ["Small", "Medium", "Large"],
-              defaultValue: "Medium"
+              options: ["Small", "Medium", "Large"], // Small = (Small Density) - Medium = (Medium Density) - Large = (Large Density)
+              defaultValue: "Medium" // هذا القيمة الافتراضية هي الكثافة الافتراضية التي ستظهر في الجدول
             }
           }
         }
@@ -543,52 +548,62 @@ PLASMIC.registerComponent(VSHTable, {
         }
       },
       fields: {
-        selected: {
+        selected: { // هذا مسؤل عن اظهار/اخفاء عمود الخاص ب Checkboxes في الجدول
           type: "boolean",
           displayName: "Selected",
           defaultValue: true
         },
-        expand: {
+        expand: { // هذا مسؤل عن اظهار/اخفاء عمود الخاص ب Expand/Collapse في الجدول
           type: "boolean",
           displayName: "Expand",
           defaultValue: true
         },
-        actions: {
+        actions: { // هذا مسؤل عن اظهار/اخفاء عمود الخاص ب Actions في الجدول
           type: "boolean",
           displayName: "Actions",
           defaultValue: true
         },
-        actionType: {
+        actionsSize: { // هذا مسؤل عن حجم عمود الاجراءات
+          type: "number",
+          displayName: "Actions Column Size",
+          defaultValue: 75,
+          min: 50,
+          max: 200
+        },
+        actionType: { // هذا مسؤل عن اختيار نوع ازرار التحكم في الجدول
           type: "choice",
           displayName: "Action Type",
-          options: ["More", "Icons"],
-          defaultValue: "More"
+          options: ["More", "Icons"], // More = (اقصد بها ايقونة الثلاث نقاط عند الضغط عليها تظهر قائمة الاجراءات) - Icons = (اقصد بها ايقونات الاجراءات المختلفة)
+          defaultValue: "More" // هذا القيمة الافتراضية هي ازرار التحكم الافتراضية التي ستظهر في الجدول
         },
         actionMoreConfig: {
           type: "object",
           displayName: "Action More Config",
           fields: {
-            iconType: {
+            iconType: { // هذا مسؤل عن اختيار نوع ايقونة الثلاث نقاط عند الضغط عليها تظهر قائمة الاجراءات
               type: "choice",
               displayName: "Icon Type",
-              options: ["Vertical", "Horizontal"],
-              defaultValue: "Vertical"
+              options: ["Vertical", "Horizontal"], // Vertical = (ايقونة الثلاث نقاط عند الضغط عليها تظهر قائمة الاجراءات بالطول) - Horizontal = (ايقونة الثلاث نقاط عند الضغط عليها تظهر قائمة الاجراءات بالعرض)
+              defaultValue: "Vertical" // هذا القيمة الافتراضية هي ايقونة الثلاث نقاط الافتراضية التي ستظهر في الجدول
             },
-            menuItems: {
+            menuItems: { // هذا هو المسؤل عن انشاء قائمة التي ستظهر عند الضغط علي ايقونة الثلاث نقاط
               type: "array",
               displayName: "Menu Items",
-              itemType: {
+              itemType: { 
                 type: "object",
                 fields: {
-                  label: {
+                  label: {// هذا هو سيكون اسم الخاص ب العنصر الذي سيتم انشاؤه داخل قائمة الاجراءات
                     type: "string",
                     displayName: "Label"
                   },
-                  icon: {
+                  icon: { // هذا هو ايقونة العنصر الذي سيتم انشاؤه داخل قائمة الاجراءات - وسيكون طريقة اختيار الايقونة بوضع اسم الايقونة من tabler icons مثال (SquareArrowOutUpRight) هذا سيكون الشكل الذي سوف اكتب به الايقونة التي اريدها
                     type: "string",
                     displayName: "Icon"
                   },
-                  action: {
+                  {
+                    قم بوضع تحكم جديد هنا يكون مسؤل عن تغير لون ال menu item ويكون عبارة عن قائمة مندسلة
+                  },
+                  action: { // هذا هو اسم الدالة التي سيتم تشغيلها عند الضغط علي العنصر الذي سيتم انشاؤه داخل قائمة الاجراءات - ويجب ان يكون interaction كالموجود في plasmic 
                     type: "string",
                     displayName: "Action"
                   }
@@ -597,11 +612,11 @@ PLASMIC.registerComponent(VSHTable, {
             }
           }
         },
-        actionIconsConfig: {
+        actionIconsConfig: { // هذا سيكون الشكل الاخر ل ازرار التحكم في الجدول - يعني بدلا من ايقونة الثلاث نقاط ستظهر ايقونات الاجراءات المختلفة
           type: "object",
           displayName: "Action Icons Config",
           fields: {
-            gap: {
+            gap: { // هذا مسؤل عن المسافة بين ايقونات الاجراءات
               type: "number",
               displayName: "Gap",
               defaultValue: 8
@@ -612,11 +627,14 @@ PLASMIC.registerComponent(VSHTable, {
               itemType: {
                 type: "object",
                 fields: {
-                  icon: {
+                  icon: { // هذا هو ايقونة العنصر الذي سيتم انشاؤه داخل قائمة الاجراءات - وسيكون طريقة اختيار الايقونة بوضع اسم الايقونة من tabler icons مثال (SquareArrowOutUpRight) هذا سيكون الشكل الذي سوف اكتب به الايقونة التي اريدها
                     type: "string",
                     displayName: "Icon"
                   },
-                  action: {
+                  {
+                    قم بوضع تحكم جديد هنا يكون مسؤل عن تغير لون ال ايقونة ويكون عبارة عن قائمة مندسلة
+                  },
+                  action: { // هذا هو اسم الدالة التي سيتم تشغيلها عند الضغط علي العنصر الذي سيتم انشاؤه داخل قائمة الاجراءات - ويجب ان يكون interaction كالموجود في plasmic
                     type: "string",
                     displayName: "Action"
                   }
@@ -640,67 +658,52 @@ PLASMIC.registerComponent(VSHTable, {
         columnResizing: true
       },
       fields: {
-        selected: {
-          type: "boolean",
-          displayName: "Enable Selection",
-          defaultValue: true
-        },
-        expand: {
-          type: "boolean",
-          displayName: "Enable Expand",
-          defaultValue: true
-        },
-        actions: {
-          type: "boolean",
-          displayName: "Enable Actions",
-          defaultValue: true
-        },
-        rowHover: {
+        rowHover: { // هذا مسؤل عن اظهار/اخفاء تأثير التمرير علي الصفوف
           type: "boolean",
           displayName: "Row Hover",
           defaultValue: true
         },
-        rowNumbers: {
+        rowNumbers: { // هذا مسؤل عن اظهار/اخفاء عمود الخاص بالرقم التسلسلي للصفوف
           type: "boolean",
           displayName: "Row Numbers",
           defaultValue: false
         },
-        tableBorder: {
+        tableBorder: { // هذا مسؤل عن اظهار/اخفاء حدود الجدول
           type: "boolean",
           displayName: "Table Border",
           defaultValue: false
         },
-        columnBorder: {
+        columnBorder: { // هذا مسؤل عن اظهار/اخفاء حدود العمود
           type: "boolean",
           displayName: "Column Border",
           defaultValue: true
         },
-        rowBorder: {
+        rowBorder: { // هذا مسؤل عن اظهار/اخفاء حدود الصف
           type: "boolean",
           displayName: "Row Border",
           defaultValue: true
         },
-        stripesRow: {
+        stripesRow: { // هذا مسؤل عن اظهار/اخفاء الصفوف المتمريرة
           type: "boolean",
           displayName: "Stripes Row",
           defaultValue: false
         },
-        rowDragging: {
+        rowDragging: { // هذا مسؤل عن اظهار/اخفاء تأثير السحب علي الصفوف
           type: "boolean",
           displayName: "Row Dragging",
           defaultValue: false
         },
-        columnDragging: {
+        columnDragging: { // هذا مسؤل عن اظهار/اخفاء تأثير السحب علي العمود
           type: "boolean",
           displayName: "Column Dragging",
           defaultValue: true
         },
-        rowResizing: {
+        rowResizing: { // هذا مسؤل عن اظهار/اخفاء تأثير التحجيم علي الصف
           type: "boolean",
           displayName: "Row Resizing",
           defaultValue: false
         },
-        columnResizing: {
+        columnResizing: { // هذا مسؤل عن اظهار/اخفاء تأثير التحجيم علي العمود
           type: "boolean",
           displayName: "Column Resizing",
           defaultValue: true
@@ -711,85 +714,13 @@ PLASMIC.registerComponent(VSHTable, {
       type: "object",
       displayName: "Actions Configuration",
       fields: {
-        actionsSize: {
+        actionsSize: { // هذا مسؤل عن حجم عمود الاجراءات
           type: "number",
           displayName: "Actions Column Size",
           defaultValue: 75,
           min: 50,
           max: 200
-        },
-        actionType: {
-          type: "choice",
-          displayName: "Action Type",
-          options: ["More", "Icons"],
-          defaultValue: "More"
-        },
-        actionMoreConfig: {
-          type: "object",
-          displayName: "More Actions Config",
-          fields: {
-            iconType: {
-              type: "choice",
-              displayName: "Icon Type",
-              options: ["Vertical", "Horizontal"],
-              defaultValue: "Vertical"
-            },
-            menuItems: {
-              type: "array",
-              displayName: "Menu Items",
-              itemType: {
-                type: "object",
-                fields: {
-                  label: {
-                    type: "string",
-                    displayName: "Label"
-                  },
-                  icon: {
-                    type: "string",
-                    displayName: "Icon"
-                  },
-                  color: {
-                    type: "string",
-                    displayName: "Color",
-                    defaultValue: "#006e28"
-                  },
-                  action: {
-                    type: "string",
-                    displayName: "Action Function Name"
-                  }
-                }
-              }
-            }
-          }
-        },
-        actionIconsConfig: {
-          type: "object",
-          displayName: "Icons Actions Config",
-          fields: {
-            gap: {
-              type: "number",
-              displayName: "Gap",
-              defaultValue: 8
-            },
-            icons: {
-              type: "array",
-              displayName: "Action Icons",
-              itemType: {
-                type: "object",
-                fields: {
-                  icon: {
-                    type: "string",
-                    displayName: "Icon"
-                  },
-                  color: {
-                    type: "string",
-                    displayName: "Color",
-                    defaultValue: "#006e28"
-                  },
-                  action: {
-                    type: "string",
-                    displayName: "Action Function Name"
-                  }
+        }
                 }
               }
             }
@@ -797,6 +728,8 @@ PLASMIC.registerComponent(VSHTable, {
         }
       }
     }
+  }
+});
   },
   importPath: "./components/vsh-table/VSHTable"
 });
